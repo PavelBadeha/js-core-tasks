@@ -31,7 +31,7 @@ function sumInput()
    while(true)
    {
        let value = +prompt("Input a number");
-       if(value || value == 0  && !Button.IsPressed)   
+       if(value || value == 0)   
        {
             arr.push(value) 
        }
