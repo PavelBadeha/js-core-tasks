@@ -25,7 +25,7 @@ let value = prompt("Give me a number")
     {
         alert(-1)
     }
-    else if (value == 0) 
+    else (value == 0) 
     {
         alert(0)
     }
