@@ -51,9 +51,9 @@ console.log(reverseTheNumber(12434))
 
 function checkForPalindrome(word) 
 {
+    
+    word = String(word).toLowerCase().replace(/[^a-zA-Z0-9]+/g,'')
     const length = String(word).length
-    word = String(word).toLowerCase().replace(/[^a-zA-Z0-9]+/g,'').trim()
-
     if(length%2 == 0 && word != "")
     {
         for(let i = 0; i < length; i++)
@@ -67,4 +67,120 @@ function checkForPalindrome(word)
     return true;    
 }
 
-console.log(checkForPalindrome("nurses run"))
+console.log(checkForPalindrome("Madam"))
+
+function generateAllCombinationOfAString(str)
+{
+    const result = []
+    let temp =''
+
+    for(let i = 0;i < str.length;i++)
+    {
+        for(let j = i; j < str.length; j++)
+        {
+            temp += str[j];
+            result.push(temp) 
+        }
+        temp='';
+    }
+    return result;
+}
+console.log(generateAllCombinationOfAString("dog"))
+
+function alphabetOrder(word)
+{
+    return word.split("").sort().join("");
+}
+
+console.log(alphabetOrder("webmaster"))
+
+function convertToUpperTheFirstLetterOfEachWord(word)
+{
+    word = word.split(" ")
+    let result = []
+    for(let value of word)
+    {
+        result.push(value.charAt(0).toUpperCase() + value.slice(1))
+    }
+    return result.join(" ")
+}
+console.log(convertToUpperTheFirstLetterOfEachWord("the quick brown fox"))
+
+function findTheLongestWordWithinTheString(str)
+{
+    str = str.split(" ")
+    let max = 0 
+    let  index = 0
+    for(let i = 0; i < str.length; i++)
+    {
+        if(str[i].length > max)
+        {
+            max = str[i].length
+            index = i;
+        }
+    }
+    return str[index];
+}
+
+console.log(findTheLongestWordWithinTheString('Web Development Tutorial'))
+
+function countTheNumberOfVowelsWithinTheString(str)
+{
+    const vowels = "aeuioAEUIO"
+    let counter = 0
+    for(let i = 0; i < str.length; i++)
+    {
+        if(vowels.indexOf(str[i]) !== -1)
+        {
+            counter++
+        }
+    }
+    return counter;
+}
+
+console.log(countTheNumberOfVowelsWithinTheString('The quick brown fox'))
+
+function checkTheNumberForPrime(number)
+{
+    if(number < 2)
+    {
+        return false
+    }
+    for(let i = 2; i < number; i++)
+    {
+        if(number%i == 0)
+        {
+            return false
+        }
+    }
+    return true
+}
+
+console.log("Prime",checkTheNumberForPrime(13))
+
+function getType(arg)
+{
+    return typeof(arg);
+}
+
+function identityMatrix(n)
+{
+    let row = ''
+    for(let i = 0;i < n;i++)
+    {
+        for(let j = 0; j < n;j++)
+        {
+            if(i === j)
+            {
+                row +='1'
+            }
+            else
+            {
+                row +='0'
+            }
+        }
+        console.log(row)
+        row = ''
+    }
+}
+identityMatrix(5)
