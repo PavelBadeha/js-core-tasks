@@ -28,27 +28,26 @@ function sumInput()
 {
     let sum = 0;
     let arr = [];
+
    while(true)
    {
-       let value = +prompt("Input a number");
-       if(value || value == 0)   
+       let value = prompt("Input a number")
+       if(value)   
        {
-            arr.push(value) 
+            arr.push(+value) 
        }
        else
        {
            break;
        }        
    } 
-
    for(var val of arr )
    {
        sum += val;
    }
-    return sum;
+    alert(sum);
 }
-
-arr = [1, -2, 3, 4, -9, 6,]
+arr = [2, -8, 5, -1, 2, -3,2]
 
 function getMaxSubSum(arr) 
 {
@@ -56,16 +55,14 @@ function getMaxSubSum(arr)
     let maxSum = 0;
     for(var value of arr)
     {
-        if(tempSum < tempSum + value)
-        {
-            tempSum += value;
-            maxSum = Math.max(maxSum,tempSum)
-        }
-        else
-        {
-           tempSum = 0;
-        }
+         tempSum += value;
+         maxSum = Math.max(maxSum,tempSum)
+         if(tempSum < 0 )
+         {
+             tempSum = 0;
+         }
     }
     return maxSum;
 }
+
 console.log(getMaxSubSum(arr));
