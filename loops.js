@@ -33,14 +33,13 @@ while(i<3)
 }
 
 // Repeat the loop untile the input is incorrect 
+let number;
 
-while(true)
+do 
 {
-    if(+prompt("Input a number greater than 100!") >= 100)
-    {
-        break;
-    }
-}
+  number = prompt("Введите число, большее 100?";
+} 
+while (number <= 100 && number);
 
 let n  = 20;
 
