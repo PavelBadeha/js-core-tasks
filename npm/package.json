@@ -1,0 +1,21 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "file.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preexecute": "node pre_file.js",
+    "execute": "node file.js",
+    "postexecute": "node post_file.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4"
+  },
+  "dependencies": {
+    "@babel/core": "^7.8.4"
+  }
+}
