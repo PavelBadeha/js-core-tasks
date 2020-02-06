@@ -1,0 +1,21 @@
+{
+  "name": "locators",
+  "version": "1.0.0",
+  "description": "",
+  "main": "locators.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "npm update",
+    "start": "node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^79.0.3",
+    "selenium-webdriver": "^4.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "chromedriver": "^79.0.3"
+  }
+}
