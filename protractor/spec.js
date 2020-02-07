@@ -17,9 +17,4 @@ describe('Protractor Demo App',function ()
   {
     expect(inputSearch.getAttribute('type')).toEqual("text")
   })
-
-  it('Shoud be welcome banner',function()
-  {
-    expect(welcomeElement.getText()).toContain("Welcome to BBC.com")
-  })
 })
