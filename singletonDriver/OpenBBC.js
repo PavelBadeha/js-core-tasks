@@ -10,7 +10,7 @@ async function openBBC(webdriverName)
     let webdriver = getInstanceOfWebdriver(webdriverName)
     try
     {
-        await webdriver.get('http://www.ox.ac.uk/')   
+        await webdriver.get('https://www.bbc.com/')   
     }
     finally
     {
@@ -20,8 +20,8 @@ async function openBBC(webdriverName)
 
 (async function()
 {
-    openBBC('chrome');
-    openBBC('firefox');
-    openBBC('ie');
+    await openBBC('chrome');
+    await openBBC('firefox');
+    await openBBC('ie');
 })();
 
