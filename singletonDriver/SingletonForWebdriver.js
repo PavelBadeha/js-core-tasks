@@ -1,24 +1,22 @@
-var webdriver = 
-(
-    function () 
-{
-	var instance;
+const {Builder} = require('selenium-webdriver');
 
-    return function Construct_singletone () 
+
+function getInstanceOfWebdriver(webdriverName) 
+{
+    let instance;
+
+    return (function constructorOfSingletone()
     {
         if (instance) 
         {
-			return instance;
-		}
-        if (this && this.constructor === Construct_singletone) 
-        {
-			instance = this;
-        } 
+            return instance;
+        }
         else 
         {
-			return new Construct_singletone();
-		}
-	}
-}());
+            instance = new Builder().forBrowser(webdriverName).build();
+            return instance;
+        }
+    })();
+}
 
-module.exports = webdriver
+module.exports = getInstanceOfWebdriver

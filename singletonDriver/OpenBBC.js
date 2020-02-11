@@ -2,15 +2,26 @@ require('chromedriver');
 require('geckodriver');
 require('iedriver');
 
-const {Builder} = require('selenium-webdriver');
+
+let getInstanceOfWebdriver = require("./SingletonForWebdriver.js")
 
 async function openBBC(webdriverName)
-{
-    let webdriver = require("./SingletonForWebdriver.js")
-    webdriver = await new Builder().forBrowser(webdriverName).build()
-    await webdriver.get('https://www.bbc.com')
+{   
+    let webdriver = getInstanceOfWebdriver(webdriverName)
+    try
+    {
+        await webdriver.get('http://www.ox.ac.uk/')   
+    }
+    finally
+    {
+        webdriver.quit()
+    }
 }
 
-openBBC("chrome")
-openBBC("firefox")
-openBBC("ie")
+(async function()
+{
+    openBBC('chrome');
+    openBBC('firefox');
+    openBBC('ie');
+})();
+
