@@ -1,0 +1,25 @@
+{
+  "name": "singletonDriver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "singletonDriver.js",
+  "devDependencies": {
+    "chromedriver": "^79.0.3",
+    "geckodriver": "^1.19.1",
+    "iedriver": "^3.14.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebbc": "npm update",
+    "bbc": "node openBBC.js"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^3.6.0",
+    "chromedriver": "^79.0.3",
+    "geckodriver": "^1.19.1",
+    "iedriver": "^3.14.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
