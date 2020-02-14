@@ -1,0 +1,12 @@
+{
+  "name": "firstTest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "YandexSearchPage.js",
+  "scripts": {
+    "test": "protractor conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
