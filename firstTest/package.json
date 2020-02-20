@@ -3,10 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "YandexSearchPage.js",
-  "scripts": {
+  "scripts": 
+  {
+    "pretest":"npm update",
     "test": "protractor conf.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": 
+  {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0"
+  }
 }

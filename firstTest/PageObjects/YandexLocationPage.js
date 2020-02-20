@@ -1,21 +1,22 @@
-const PageObject = require("./PageObject.js");
-const YandexSearchPage = require("./YandexSearchPage.js");
+import {isDisplayedWait} from "../IsDisplayedWait.js";
 
-class YandexLocationPage extends PageObject
+export class YandexLocationPage
 {
-    input;
+    constructor()
+    {
+        this.input = element(by.css(".input__control.input__input"));
+    }
+
     async setLocation(city)
     {
-        this.input = await this.getElement(by.css(".input__control.input__input"));
+        await isDisplayedWait(this.input,500,4000);
         await this.input.clear();
         await this.input.sendKeys(city);
     }
 
     async backToSearchPage()
     {
-        this.input = await this.getElement(by.css(".input__control.input__input"));
+        await isDisplayedWait(this.input,500,4000);
         await this.input.sendKeys(protractor.Key.ENTER);
     }
 }
-
-module.exports = YandexLocationPage;

@@ -1,33 +1,33 @@
-const PageObject = require("./PageObject.js");
-const YandexLocationPage = require('./YandexLocationPage.js');
-const YandexMoreButtonPage = require('./YandexMoreButtonPage.js');
+import {YandexLocationPage}  from './YandexLocationPage.js';
+import {YandexMoreButtonPage} from './YandexMoreButtonPage.js';
+import {isDisplayedWait} from '../IsDisplayedWait.js';
 
-class YandexSearchPage extends PageObject
+export class YandexSearchPage
 {
-    input;
-    locationButton;
-    moreButton;
+    constructor()
+    {
+        this.input = element(by.css(".input__control.input__input"));
+        this.locationButton = element(by.css(".geolink__reg"));
+        this.moreButton = element(by.xpath("//*[contains(@class, 'home-tabs__more-switcher')]"));
+    }
 
     async search(message)
     {
-        this.input = await this.getElement(by.css(".input__control.input__input"));
+        await isDisplayedWait(this.input,500,4000);
         await this.input.sendKeys(message).submit();
     }
 
     async navigateToLocationPage()
-    {
-        this.locationButton = await this.getElement(by.css(".geolink__reg"));
+    { 
+        await isDisplayedWait(this.locationButton,500,4000);
         await this.locationButton.click();
-
-        return new YandexLocationPage(this.driver);
+        return new YandexLocationPage();
     }
 
     async navigateToYandexMoreButtonPage()
     {
-        this.moreButton = await this.getElement(by.xpath("//*[contains(@class, 'home-tabs__more-switcher')]"));
+        await isDisplayedWait(this.moreButton,500,4000);
         await this.moreButton.click();
-        return new YandexMoreButtonPage(this.driver);
+        return new YandexMoreButtonPage();
     }
 }
-
-module.exports = YandexSearchPage;

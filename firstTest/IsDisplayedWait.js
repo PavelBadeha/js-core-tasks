@@ -1,4 +1,4 @@
-async function isDisplayedWait(element,waitingInterval,timeout)
+export async function isDisplayedWait(element,waitingInterval,timeout)
 {
     await new Promise((resolve,reject)=>
     {
@@ -18,9 +18,8 @@ async function isDisplayedWait(element,waitingInterval,timeout)
         setTimeout(() => 
         {
             clearInterval(timeId);
-            reject(new Error("Element aren't displayed"))
+            reject(new Error(`Element aren't displayed ${element}`))
         }
         ,timeout)
     })
 }
-module.exports = isDisplayedWait

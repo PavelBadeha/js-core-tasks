@@ -1,30 +1,28 @@
-let YandexSearchPage = require("./PageObjects/YandexSearchPage.js");
-let YandexLocationPage = require('./PageObjects/YandexLocationPage.js');
-let YandexMoreButtonPage = require('./PageObjects/YandexMoreButtonPage.js');
+import {YandexSearchPage} from "./PageObjects/YandexSearchPage.js";
 
 describe("Test",function()
 {
     browser.ignoreSynchronization = true;
     browser.get("https://yandex.by/");
 
-    YandexSearchPage = new YandexSearchPage(browser);
+    const yandexSearchPage = new YandexSearchPage(browser);
 
-    it("Test for change location",async function()
+    it("My first test",async function()
     {
-        YandexLocationPage = await YandexSearchPage.navigateToLocationPage();
-        await YandexLocationPage.setLocation("Лондон");
-        await YandexLocationPage.backToSearchPage();
+        let yandexLocationPage = await yandexSearchPage.navigateToLocationPage();
+        await yandexLocationPage.setLocation("Лондон");
+        await yandexLocationPage.backToSearchPage();
+    
+        let yandexMoreButtonPage = await yandexSearchPage.navigateToYandexMoreButtonPage()
+        const londonMoreItems = await yandexMoreButtonPage.elementsUnderMoreButton.getText();
 
-        YandexMoreButtonPage = await YandexSearchPage.navigateToYandexMoreButtonPage()
-        let londonMoreItems = await YandexMoreButtonPage.getElementsUnderMoreButton();
+        yandexLocationPage = await yandexSearchPage.navigateToLocationPage();
+        await yandexLocationPage.setLocation("Париж");
+        await yandexLocationPage.backToSearchPage();
 
-        YandexLocationPage = await YandexSearchPage.navigateToLocationPage();
-        await YandexLocationPage.setLocation("Париж");
-        await YandexLocationPage.backToSearchPage();
+        yandexMoreButtonPage = await yandexSearchPage.navigateToYandexMoreButtonPage()
+        const parisMoreItems = await yandexMoreButtonPage.elementsUnderMoreButton.getText();
 
-        YandexMoreButtonPage = await YandexSearchPage.navigateToYandexMoreButtonPage()
-        let parisMoreItems = await YandexMoreButtonPage.getElementsUnderMoreButton();
-        
         expect(londonMoreItems).toEqual(parisMoreItems);
     })
    
