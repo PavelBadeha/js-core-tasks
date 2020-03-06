@@ -1,0 +1,21 @@
+{
+  "name": "firstTest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "YandexSearchPage.js",
+  "scripts": {
+    "webdriver-update": "webdriver-manager update",
+    "webdriver-start": "webdriver-manager start",
+    "pretest": "npm update",
+    "test": "protractor conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "agent-js-jasmine": "^3.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "protractor-flake": "^4.0.0"
+  }
+}
