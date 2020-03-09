@@ -1,9 +1,9 @@
 
 module.exports = {
 
-    token: "603bb570-e35c-4391-bd10-9b63ab6c5d85",
+    token: "721afe37-3c60-4c17-8b06-cd6cccb09d0c",
 
-    endpoint: "http://172.17.219.27:8080/api/v1",
+    endpoint: "http://172.17.219.28:8080/api/v1",
 
     launch: "superadmin_TEST_EXAMPLE",
 

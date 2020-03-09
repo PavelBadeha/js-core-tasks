@@ -18,31 +18,16 @@ export class YandexSearchPage
         await isDisplayedWait(this.input,500,4000);
         await this.input.sendKeys(message).submit();
     }
-
     async navigateToLocationPage()
-    { 
-        await isDisplayedWait(this.locationButton,500,4000);
-        await this.locationButton.click();
-        return new YandexLocationPage();
-    }
-    async navigateToSettings()
     {
         await isDisplayedWait(this.settingButton,500,4000);
         await this.settingButton.click();
-        // await isDisplayedWait(this.changeLocation,500,4000);
-        // await this.changeLocation.click();
-        // return new YandexLocationPage();
-    }
-    async changeLocation()
-    {
         await isDisplayedWait(this.changeLocation,500,4000);
         await this.changeLocation.click();
-        return new YandexLocationPage();
     }
     async navigateToYandexMoreButtonPage()
     {
         await isDisplayedWait(this.moreButton,500,4000);
         await this.moreButton.click();
-        return new YandexMoreButtonPage();
     }
 }
