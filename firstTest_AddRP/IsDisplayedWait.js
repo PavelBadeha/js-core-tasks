@@ -18,7 +18,7 @@ export async function isDisplayedWait(element,waitingInterval,timeout)
         setTimeout(() => 
         {
             clearInterval(timeId);
-            reject(new Error(`Element aren't displayed ${element}`))
+            reject(new Error(`Element aren't displayed ${element.getTagName()})`))
         }
         ,timeout)
     })

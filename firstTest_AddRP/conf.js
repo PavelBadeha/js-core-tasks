@@ -3,8 +3,6 @@ const ReportportalAgent = require('./node_modules/agent-js-jasmine/lib/reportpor
 const reportportalConfig = require('./reportportalConf.js');
 let agent;
 
-console.log(typeof(ReportportalAgent));
-
 exports.config = 
 {
     seleniumAddress:"http://localhost:4444/wd/hub",
@@ -12,6 +10,7 @@ exports.config =
     onPrepare: function () 
     {
         require("babel-core/register")({presets: ["es2015"]});
+        
         agent = new ReportportalAgent(reportportalConfig);
         jasmine.getEnv().addReporter(agent.getJasmineReporter());
 
