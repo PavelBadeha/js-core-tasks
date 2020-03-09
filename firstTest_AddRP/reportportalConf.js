@@ -1,13 +1,13 @@
 
 module.exports = {
 
-    token: "00000000-0000-0000-0000-000000000000",
+    token: "603bb570-e35c-4391-bd10-9b63ab6c5d85",
 
-    endpoint: "http://your.reportportal.server/api/v1",
+    endpoint: "http://172.17.219.27:8080/api/v1",
 
-    launch: "LAUNCH_NAME",
+    launch: "superadmin_TEST_EXAMPLE",
 
-    project: "PROJECT_NAME",
+    project: "superadmin_personal",
 
     description: 'YOUR_DESCRIPTION',
 
