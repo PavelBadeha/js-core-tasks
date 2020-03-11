@@ -3,6 +3,7 @@ import {YandexLocationPage} from './PageObjects/YandexLocationPage.js';
 import {YandexMoreButtonPage} from './PageObjects/YandexMoreButtonPage.js';
 describe("Test",function()
 {   
+    console.log("BOOOM!!");
     browser.ignoreSynchronization = true;
     browser.get("https://yandex.by/");
 

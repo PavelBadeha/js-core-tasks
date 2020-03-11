@@ -13,7 +13,6 @@ exports.config =
         
         agent = new ReportportalAgent(reportportalConfig);
         jasmine.getEnv().addReporter(agent.getJasmineReporter());
-
     },
 
     afterLaunch(number) {
