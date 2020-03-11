@@ -12,13 +12,13 @@ export async function isDisplayedWait(element,waitingInterval,timeout)
                     clearInterval(this)
                 }
             }
-            catch(err){}
+            catch(err){reject(new Error(`Element aren't displayed`))}
         }, waitingInterval)
 
         setTimeout(() => 
         {
             clearInterval(timeId);
-            reject(new Error(`Element aren't displayed ${element.getTagName()})`))
+            reject(new Error(`Element aren't displayed`))
         }
         ,timeout)
     })

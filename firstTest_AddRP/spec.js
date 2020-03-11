@@ -10,6 +10,7 @@ describe("Test",function()
     const yandexSearchPage = new YandexSearchPage();
     let yandexLocationPage =  new YandexLocationPage();
     let yandexMoreButtonPage = new YandexMoreButtonPage();
+
     it("My first test",async function()
     {
         await yandexSearchPage.navigateToLocationPage();
@@ -24,7 +25,7 @@ describe("Test",function()
         await yandexLocationPage.setLocation("Париж");
         await yandexLocationPage.backToSearchPage();
 
-        yandexMoreButtonPage = await yandexSearchPage.navigateToYandexMoreButtonPage()
+        await yandexSearchPage.navigateToYandexMoreButtonPage()
         const parisMoreItems = await yandexMoreButtonPage.elementsUnderMoreButton.getText();
 
         expect(londonMoreItems).toEqual(parisMoreItems);
